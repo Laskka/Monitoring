@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="part1" xml:space="preserve">
+    <value>using System;
+using System.Collections.Generic;
+using System.Management;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading;
+
+namespace ConsoleApp4
+{
+
+
+    class Program
+    {
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+        static void Main(string[] args)
+        {
+            var currentProcess = System.Diagnostics.Process.GetCurrentProcess();
+
+            /*IntPtr hWnd = currentProcess.MainWindowHandle;//FindWindow(null, "Your console windows caption"); //put your console window caption here
+            if (hWnd != IntPtr.Zero)
+            {
+                //Hide the window
+                ShowWindow(hWnd, 0); // 0 = SW_HIDE
+            }*/
+
+
+
+            try
+            {
+                 SendMessageFromSocket(11000);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                //чтобы программане закрывалась после выполнения
+                //Console.ReadLine();
+            }   
+        }
+
+        static void SendMessageFromSocket(int port)
+        {
+            
+
+            while (true)
+            {
+
+                try
+                {
+                    IPAddress ipAddr = IPAddress.Parse("192.168.0.105");
+                    IPEndPoint ipEndPoint = new IPEndPoint(ipAddr, port);
+
+                    TcpClient tcpClient = new TcpClient();
+                    tcpClient.Connect(ipEndPoint);
+
+                    NetworkStream netStream = tcpClient.GetStream();
+
+                    string message = "" +
+                        Environment.MachineName + ipAddr.ToString() + "\n" +
+                        OutputResult("Процессор:", GetHardwareInfo("Win32_Processor", "Name")) + "\n" +
+                        OutputResult("Видеокарта:", GetHardwareInfo("Win32_VideoController", "Name")) + "\n" +
+                        OutputResult("Размер Оперативной Памяти: ", GetHardwareInfo("Win32_ComputerSystem", "TotalPhysicalMemory")) + "\n";
+                    byte[] data = Encoding.UTF8.GetBytes(message);
+
+                    netStream.Write(data, 0, data.Length);
+
+                    Thread.Sleep(60000);
+
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.ToString());
+                    Console.ReadLine();
+                }
+            }
+        }
+
+        private static List&lt;string&gt; GetHardwareInfo(string WIN32_Class, string ClassItemField)
+        {
+            List&lt;string&gt; result = new List&lt;string&gt;();
+
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM " + WIN32_Class);
+
+            try
+            {
+                foreach (ManagementObject obj in searcher.Get())
+                {
+                    result.Add(obj[ClassItemField].ToString().Trim());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return result;
+        }
+            
+        private static string OutputResult(string info, List&lt;string&gt; result)
+        {
+            string msg = "";
+
+            if (info.Length &gt; 0)
+                Console.Write(info);    
+
+            if (result.Count &gt; 0)
+            {
+
+                for (int i = 0; i &lt; result.Count; ++i)
+                    msg += result[i];
+                Console.WriteLine(" " + msg);
+            }
+            return msg;
+        }
+    }
+}</value>
+  </data>
+  <data name="part2" xml:space="preserve">
+    <value>using System;
+using System.Collections.Generic;
+using System.Management;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading;
+
+namespace ConsoleApp2
+{
+
+
+    class Program
+    {
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+        static void Main(string[] args)
+        {
+            /*var currentProcess = System.Diagnostics.Process.GetCurrentProcess();
+
+            IntPtr hWnd = currentProcess.MainWindowHandle;//FindWindow(null, "Your console windows caption"); //put your console window caption here
+            if (hWnd != IntPtr.Zero)
+            {
+                //Hide the window
+                ShowWindow(hWnd, 0); // 0 = SW_HIDE
+            }*/
+
+
+
+            try
+            {
+                SendMessageFromSocket(11000);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                //чтобы программане закрывалась после выполнения
+                //Console.ReadLine();
+            }
+        }
+
+        static void SendMessageFromSocket(int port)
+        {
+
+
+            while (true)
+            {
+
+                try
+                {
+                    IPAddress ipAddr = IPAddress.Parse("</value>
+  </data>
+  <data name="part3" xml:space="preserve">
+    <value>");
+                    IPEndPoint ipEndPoint = new IPEndPoint(ipAddr, port);
+
+                    TcpClient tcpClient = new TcpClient();
+                    tcpClient.Connect(ipEndPoint);
+
+                    NetworkStream netStream = tcpClient.GetStream();
+
+                    string message =System.Environment.UserName + "\n" +
+                        OutputResult("Имя процессора:", GetHardwareInfo("Win32_Processor", "Name")) + "\n" +
+                        OutputResult("Процессор загружиность процессора:", GetHardwareInfo("Win32_Processor", "LoadPercentage")) + "\n" +
+                        OutputResult("Статус процессора:", GetHardwareInfo("Win32_Processor", "Status")) + "\n" +
+                        OutputResult("Сокет процессора:", GetHardwareInfo("Win32_Processor", "SocketDesignation")) + "\n" +
+                        OutputResult("Состояние процессора:", GetHardwareInfo("Win32_Processor", "Availability")) + "\n" +
+                        OutputResult("Максимальная чистота процессора:", GetHardwareInfo("Win32_Processor", "MaxClockSpeed")) + "\n" +
+                        OutputResult("Количество физических ядер процессора:", GetHardwareInfo("Win32_Processor", "NumberOfCores")) + "\n" +
+                        OutputResult("Количество логических ядер процессора:", GetHardwareInfo("Win32_Processor", "NumberOfLogicalProcessors")) + "\n" +
+                        OutputResult("Видеокарта:", GetHardwareInfo("Win32_VideoController", "Name")) + "\n" +
+                        OutputResult("Размер видеопамяти Видеокарты:", GetHardwareInfo("Win32_VideoController", "AdapterRAM")) + "\n" +
+                        OutputResult("Доступность и состояние Видеокарты:", GetHardwareInfo("Win32_VideoController", "Availability")) + "\n" +
+                        OutputResult("Герцовая чистота обновления экрана:", GetHardwareInfo("Win32_VideoController", "CurrentRefreshRate")) + "\n" +
+                        OutputResult("Версия видеодрайвера:", GetHardwareInfo("Win32_VideoController", "DriverVersion")) + "\n" +
+                        OutputResult("Статус видиокарты:", GetHardwareInfo("Win32_VideoController", "Status")) + "\n" +
+                        OutputResult("Видеопроцессор:", GetHardwareInfo("Win32_VideoController", "VideoProcessor")) + "\n" +
+                        OutputResult("Видеопроцессор:", GetHardwareInfo("Win32_BIOS", "Name")) + "\n" +
+                        OutputResult("Версия биоса:", GetHardwareInfo("Win32_BIOS", "Manufacturer")) + "\n" +
+                        OutputResult("Размер Оперативной Памяти: ", GetHardwareInfo("Win32_ComputerSystem", "TotalPhysicalMemory")) + "\n";
+                    byte[] data = Encoding.UTF8.GetBytes(message);
+
+                    netStream.Write(data, 0, data.Length);
+
+                    Thread.Sleep(60000);
+
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.ToString());
+                    Console.ReadLine();
+                }
+            }
+        }
+
+        private static List&lt;string&gt; GetHardwareInfo(string WIN32_Class, string ClassItemField)
+        {
+            List&lt;string&gt; result = new List&lt;string&gt;();
+
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM " + WIN32_Class);
+
+            try
+            {
+                foreach (ManagementObject obj in searcher.Get())
+                {
+                    result.Add(obj[ClassItemField].ToString().Trim());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return result;
+        }
+
+        private static string OutputResult(string info, List&lt;string&gt; result)
+        {
+            string msg = "";
+
+            if (info.Length &gt; 0)
+                Console.Write(info);
+
+            if (result.Count &gt; 0)
+            {
+
+                for (int i = 0; i &lt; result.Count; ++i)
+                    msg += result[i];
+                Console.WriteLine(" " + msg);
+            }
+            return msg;
+        }
+    }
+}</value>
+  </data>
+</root>

@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Monitoring"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1100" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="Monitoring" Height="700" Width="1100" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
     <StackPanel Background="LightGray">
         <Grid Height="40" VerticalAlignment="Top" Background="#FF3263CC">
@@ -14,26 +14,35 @@
                 <ComboBox x:Name="cbx_ipServer" Width="100" Foreground="White">
                 </ComboBox>
                 <Button Margin="15 0 0 0" x:Name="btn_startServer" Background="IndianRed" Click="btn_startServer_Click"></Button>
+                <Button Margin="30 0 0 0" x:Name="btn_Test" Background="IndianRed" Click="btn_Test_Click"></Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
                 <Button Width="35" Height="36" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="0,0,0,2" Click="Pwr_Click">
                     <materialDesign:PackIcon Kind="Power" Foreground="White" Width="25" Height="25" />
                 </Button>
             </StackPanel>
-            <Rectangle Margin="162,0,50,0" Height="40" Fill="#00000000" MouseLeftButtonDown="Rectangle_MouseLeftButtonDown"></Rectangle>
+            <Rectangle Margin="237,0,50,0" Height="40" Fill="#00000000" MouseLeftButtonDown="Rectangle_MouseLeftButtonDown"></Rectangle>
         </Grid>
-        <Grid VerticalAlignment="Top" Height="80" Background="#FF5B8FFF">
+        <Grid VerticalAlignment="Top" Height="50" Background="#FF5B8FFF">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="10" Direction="-90" RenderingBias="Performance" ShadowDepth="2"/>
             </Grid.Effect>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
-                <Button x:Uid="1" Width="200" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" Content="All Computers" Foreground="White" Click="mainBtn_Click"/>
-                <Button x:Uid="2" Width="200" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" Content="Selected Computer" Foreground="White" Click="mainBtn_Click"/>
-                <Button x:Uid="3" Width="200" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" Content="Settings" Foreground="White" Click="mainBtn_Click"/>
+                <Button x:Uid="1" Width="353" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" Content="Все компьютеры" Foreground="White" Click="mainBtn_Click" FontSize="18"/>
+                <Button x:Uid="2" Width="353" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" Content="Выбранный компьютер" Foreground="White" Click="mainBtn_Click" FontSize="18"/>
+                <Button x:Uid="3" Width="353" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" Content="Настройки" Foreground="White" Click="mainBtn_Click" FontSize="18"/>
             </StackPanel>
-            <Grid x:Name="floatStick" Height="5" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" Background="#FFDADADA" Margin="250 0 0 0"></Grid>
+            <Grid x:Name="floatStick" Height="23" Width="354" VerticalAlignment="Center" HorizontalAlignment="Left" Background="#FFDADADA" Margin="20,40,0,-13"></Grid>
         </Grid>
         <Grid Height="580" x:Name="sp_Main"/>
+        <Grid Height="30" Background="White">
+            <StackPanel Orientation="Horizontal" Margin="0">
+                <Label Margin="620,0,0,0" Content="© Все права защищены. По вопросам обращаться на почту" Foreground="Black"/>
+                <TextBlock Padding="0 6 0 0">
+      <Hyperlink NavigateUri="https://vk.com/love_pugs" RequestNavigate="Hyperlink_RequestNavigate">dolgikh-e-a@yandex.ru</Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </Grid>
     </StackPanel>
 
 </Window>

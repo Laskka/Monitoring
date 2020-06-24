@@ -4,9 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Monitoring.Tabs"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             Height="150" Width="800" Background="Black">
+             Height="150" Width="800" Background="BlanchedAlmond">
     <Grid>
-        <Button Height="150" Click="Button_Click" x:Name="text_NameComputer"></Button>
+        <Button Height="150" Click="Button_Click" x:Name="text_NameComputer" FontSize="34"/>
+        <Grid >
+            <Button Height="25" Padding="0" Click="btn_report_Click" x:Name="btn_report" FontSize="25" Background="#FFCBCBCB" Margin="765,10,10,115" Width="25">
+                <materialDesign:PackIcon Kind="File" Foreground="Black" Width="21" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0"/>
+
+            </Button>
+
+
+        </Grid>
+
     </Grid>
 </UserControl>

@@ -129,9 +129,10 @@ namespace Monitoring.Properties {
         ///
         ///                    NetworkStream netStream = tcpClient.GetStream();
         ///
-        ///                    string message =System.Environment.UserName + &quot;\n&quot; +
+        ///                    string message = /*System.Environment.UserName*/ System.Net.Dns.GetHostName()
+        /// + &quot;\n&quot; +
         ///                        OutputResult(&quot;Имя процессора:&quot;, GetHardwareInfo(&quot;Win32_Processor&quot;, &quot;Name&quot;)) + &quot;\n&quot; +
-        ///                        OutputResult(&quot;Процессор загружиность [остаток строки не уместился]&quot;;.
+        ///                         [остаток строки не уместился]&quot;;.
         /// </summary>
         public static string part3 {
             get {

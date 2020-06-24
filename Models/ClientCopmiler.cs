@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Net;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,13 +21,13 @@ namespace Monitoring.Models
             CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
             CompilerParameters parameters = new CompilerParameters();
             
-
             parameters.GenerateExecutable = true;
             parameters.OutputAssembly = $"{name}.exe";
             parameters.GenerateInMemory = false;
             parameters.TreatWarningsAsErrors = false;
             parameters.ReferencedAssemblies.Add("System.Management.dll");
             parameters.ReferencedAssemblies.Add("System.dll");
+            parameters.ReferencedAssemblies.Add("System.Net.dll");
 
 
             //CompilerResults results = provider.CompileAssemblyFromFile(parameters, $"{AppDomain.CurrentDomain.BaseDirectory}/{name}.tuo");

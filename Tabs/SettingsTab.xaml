@@ -6,22 +6,34 @@
              xmlns:local="clr-namespace:Monitoring.Tabs"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             Height="580" Width="1100" Background="Orange">
+             Height="580" Width="1100" Background="LightGray">
     <Grid>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="50">
-            <Label x:Name="lbl_ip" Foreground="White" FontWeight="Bold">Ip-адрес сервера</Label>
-            <TextBox x:Name="txt_IpClient" Background="White" Margin="0 0 0 40"/>
-            <Button Content="Создать" Click="Button_Click" Width="350"/>
-        </StackPanel>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50">
-            <Label x:Name="lbl_i" Foreground="White" FontWeight="Bold" Content="Путь log-ирования"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="350" Margin="0 0 0 40">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="LightGray">
+            <Image HorizontalAlignment="Left" Height="423" Margin="56,60,0,0" VerticalAlignment="Top" Width="423" Source="/Monitoring;component/img/177-1770904_png-file-gear-wheels-icon-png.png"/>
 
-                <TextBox x:Name="txt_SavePath" Background="White"  Width="300"/>
-                <Button Click="Button_Click_2" Width="42" Margin="8 0 0 0">...</Button>
+        </Grid>
+        <Grid Grid.Column="1">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0" Height="112" Width="350">
+                    <Label x:Name="lbl_ip" Foreground="Black" FontWeight="Bold" FontSize="18">Ip-адрес сервера</Label>
+                    <TextBox x:Name="txt_IpClient" Background="White" Margin="0 0 0 20"/>
+                    <Button Content="Создать" Click="Button_Click" Width="350"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0" Height="120" Width="350">
+                    <Label x:Name="lbl_i" Foreground="Black" FontWeight="Bold" Content="Путь log-ирования" FontSize="18"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="350" Margin="0 0 0 20">
+
+                        <TextBox x:Name="txt_SavePath" Background="White"  Width="300"/>
+                        <Button Click="Button_Click_2" Width="42" Margin="8 0 0 0">...</Button>
+                    </StackPanel>
+                    <Button Content="Сохранить" Click="Button_Click_1" Width="350"/>
+                </StackPanel>
             </StackPanel>
-            <Button Content="Сохранить" Click="Button_Click_1" Width="350"/>
-        </StackPanel>
-            
+        </Grid>
+
     </Grid>
 </UserControl>

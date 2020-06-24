@@ -1,6 +1,7 @@
 ﻿using Monitoring.Models.DBaseModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,17 @@ namespace Monitoring.Tabs
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (pressed != null) pressed(computer);
+        }
+
+        private void btn_report_Click(object sender, RoutedEventArgs e)
+        {
+            using (FileStream fs = new FileStream($"{Properties.Settings.Default.savePath}/{computer.ComputerName}1.txt", FileMode.OpenOrCreate))
+            {
+                using (StreamWriter sw = new StreamWriter(fs))
+                {
+                    sw.Write(computer.MessegeFromClient);
+                }
+            }
         }
     }
 }

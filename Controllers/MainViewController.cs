@@ -32,23 +32,18 @@ namespace Monitoring.Controllers
             SetComboBoxId();
 
             StartSetView();
-
-            
-
         }
+
         void StartSetView()
         {
-
             try
             {
-                string[] allFoundFiles = Directory.GetFiles($"{Settings.Default.savePath}", "*.txt", SearchOption.TopDirectoryOnly);
-
-                computers = new List<Computer>();
+                string[] allFoundFiles = Directory.GetFiles($"{AppDomain.CurrentDomain.BaseDirectory}\\data", "*.txt", SearchOption.TopDirectoryOnly);
+                
                 if (allFoundFiles.Length != 0)
                 {
                     foreach (var item in allFoundFiles)
                     {
-                        
                         computers.Add(new Computer(new StreamReader(item).ReadToEnd()));
                     }
 
@@ -67,13 +62,9 @@ namespace Monitoring.Controllers
             }
             catch (Exception)
             {
-
-
-                
             }
-            
         }
-
+         
         void SetComboBoxId()
         {
             foreach (var item in Dns.GetHostByName(Dns.GetHostName()).AddressList)
@@ -88,19 +79,18 @@ namespace Monitoring.Controllers
         {
             Computer ccc = new Computer(str);
 
-
             bool isInComputerList = false;
+
             for (int i = 0; i < computers.Count; i++)
             {
-                Computer c = computers[i];
-                if (c.ComputerName == ccc.ComputerName)
+                if (computers[i].ComputerName == ccc.ComputerName)
                 {
                     isInComputerList = true;
-                    c = ccc;
-                    if (selectComputer.ComputerName == c.ComputerName)
+                    /*computers[i] = ccc;
+                    if (selectComputer.ComputerName == computers[i]?.ComputerName)
                     {
-                        SelectedComuterTile(c);
-                    }
+                        SelectedComuterTile(computers[i]);
+                    }*/
                     break;
                 }
             }
@@ -118,11 +108,9 @@ namespace Monitoring.Controllers
                 });
             }
             
-            FileStream fs = new FileStream($"{ccc.ComputerName}.txt", FileMode.OpenOrCreate);
+            FileStream fs = new FileStream($"{ AppDomain.CurrentDomain.BaseDirectory }\\data\\{ccc.ComputerName}.txt", FileMode.OpenOrCreate);
             StreamWriter sw = new StreamWriter(fs);
-
             sw.Write(ccc.MessegeFromClient);
-
             sw.Close();
             fs.Close();
         }
@@ -133,7 +121,7 @@ namespace Monitoring.Controllers
             mainWindow.sp_Main.Children.Add(mainWindow.sct);
             selectComputer = c;
 
-            mainWindow.floatStick.Margin = new Thickness(50 + 200 * 2, 0, 0, 0);
+            mainWindow.floatStick.Margin = new Thickness(20 + 353 * 1, 35, 0, 0);
             mainWindow.act.Visibility = Visibility.Hidden;
             mainWindow.sct.Visibility = Visibility.Visible;
             mainWindow.st.Visibility = Visibility.Hidden;

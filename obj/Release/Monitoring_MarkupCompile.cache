@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\laskk\source\repos\Monitoring\obj\Debug\
+C:\Users\laskk\source\repos\Monitoring\obj\Release\
 Monitoring
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\laskk\source\repos\Monitoring\App.xaml
 52058727691
 
@@ -16,5 +16,5 @@ C:\Users\laskk\source\repos\Monitoring\App.xaml
 20-2025948402
 MainWindow.xaml;Tabs\AllComutersTab.xaml;Tabs\ComputerTile.xaml;Tabs\SelectedComputerTab.xaml;Tabs\SettingsTab.xaml;
 
-False
+True
 

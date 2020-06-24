@@ -1,0 +1,20 @@
+192.168.0.100
+Laskka-notebook
+AMD Ryzen 3 3200U with Radeon Vega Mobile Gfx
+2
+OK
+FP5
+3
+2600
+2
+4
+AMD Radeon(TM) Vega 3 Graphics
+536870912
+3
+60
+26.20.11026.12
+OK
+AMD Radeon Graphics Processor (0x15D8)
+N.1.03
+American Megatrends Inc.
+3695128576

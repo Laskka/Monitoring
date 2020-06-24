@@ -16,9 +16,11 @@ namespace Monitoring.Models
     {
         public IPAddress ipAddr { get; }
         public IPEndPoint ipEndPoint { get; }
-        TcpListener server;
-        Thread listen;
-        
+        public TcpListener server;
+        public Thread listen;
+        TcpClient client;
+
+
         public event ClientConnectHendler Conected;
 
         public Networking(string IpAddr, int port)
@@ -47,9 +49,9 @@ namespace Monitoring.Models
         {
             while (true)
             {
-                TcpClient client = server.AcceptTcpClient();          
+                client = server.AcceptTcpClient();
 
-                    byte[] data = new byte[256];
+                byte[] data = new byte[256];
                 StringBuilder response = new StringBuilder();
                 NetworkStream stream = client.GetStream();
 
@@ -65,8 +67,7 @@ namespace Monitoring.Models
                 while (stream.DataAvailable);
 
                 if (Conected != null) Conected(response.ToString());
-                stream.Close();
-                client.Close();
+
             }
         }
     }

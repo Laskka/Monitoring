@@ -1,7 +1,7 @@
-192.168.0.100
-laskk
+192.168.0.103
+Laskka-PC
 AMD Ryzen 5 3600 6-Core Processor
-2
+15
 OK
 AM4
 3
@@ -12,12 +12,9 @@ Radeon RX 590 Series
 4293918720
 3
 60
-26.20.15002.61
+26.20.15019.19000
 OK
 AMD Radeon Graphics Processor (0x67DF)
 BIOS Date: 07/31/19 11:09:53 Ver: 05.0000E
 American Megatrends Inc.
-8518098944
-000E
-American Megatrends Inc.
-8518098944
+17108029440

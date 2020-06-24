@@ -307,7 +307,8 @@ namespace ConsoleApp2
 
                     NetworkStream netStream = tcpClient.GetStream();
 
-                    string message =System.Environment.UserName + "\n" +
+                    string message = /*System.Environment.UserName*/ System.Net.Dns.GetHostName()
+ + "\n" +
                         OutputResult("Имя процессора:", GetHardwareInfo("Win32_Processor", "Name")) + "\n" +
                         OutputResult("Процессор загружиность процессора:", GetHardwareInfo("Win32_Processor", "LoadPercentage")) + "\n" +
                         OutputResult("Статус процессора:", GetHardwareInfo("Win32_Processor", "Status")) + "\n" +

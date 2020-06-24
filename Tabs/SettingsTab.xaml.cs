@@ -5,19 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Monitoring.Properties;
-using System.IO;
 using System.Windows.Forms;
-
-using Monitoring.Properties;
 
 namespace Monitoring.Tabs
 {
@@ -36,7 +25,8 @@ namespace Monitoring.Tabs
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.savePath = txt_SavePath.Text;
+            Settings.Default.savePath = txt_SavePath.Text;
+            Settings.Default.Save();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -48,6 +38,7 @@ namespace Monitoring.Tabs
             if (!string.IsNullOrWhiteSpace(folderBrowser.SelectedPath))
             {
                 Settings.Default.savePath = folderBrowser.SelectedPath;
+                Settings.Default.Save();
                 txt_SavePath.Text = folderBrowser.SelectedPath;
             }
         }
